@@ -9,7 +9,7 @@ class Solution:
         for index in range(len(nums) - 2):
             l = index + 1
             r = len(nums)-1
-            if(index != 0 and nums[index] == nums[index-1]):
+            if(index > 0 and nums[index] == nums[index-1]):
                 continue
             while l < r:
                 if (nums[l] + nums[r] == - nums[index]):
@@ -18,7 +18,7 @@ class Solution:
                     r -= 1
                     while l < r and (nums[l] == nums[l-1]):
                         l += 1
-                    while l < r and r+1 < len(nums) and (nums[r] == nums[r+1]):
+                    while l < r and (nums[r] == nums[r+1]):
                         r -= 1
                 else:
                     if (nums[l] + nums[r] > - nums[index]):
